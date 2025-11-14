@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: microburbs-dashboard
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: cd app && gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.6
+      - key: MICROBURBS_API_TOKEN
+        value: test
+

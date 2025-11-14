@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microburbs Property Insight Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>🏘️ Microburbs Property Insight Dashboard</h1>
+            <p class="subtitle">Discover property opportunities with data-driven insights</p>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="suburbInput" 
+                    class="search-input" 
+                    placeholder="Enter suburb name (e.g., Redfern, Bondi)"
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="search-btn">
+                    <span class="btn-text">Search</span>
+                    <span class="btn-icon">🔍</span>
+                </button>
+            </div>
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+        </section>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="loading" style="display: none;">
+            <div class="loader"></div>
+            <p>Fetching property data...</p>
+        </div>
+
+        <!-- Results Section -->
+        <section id="resultsSection" class="results-section" style="display: none;">
+            <!-- Suburb Overview -->
+            <div id="suburbOverview" class="suburb-overview">
+                <h2 id="suburbName"></h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">Suburb Score</div>
+                        <div class="metric-value" id="suburbScore">-</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Walkability</div>
+                        <div class="metric-value" id="walkability">-</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Population Growth</div>
+                        <div class="metric-value" id="populationGrowth">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insights Summary -->
+            <div id="insightsSummary" class="insights-summary">
+                <!-- Summary will be inserted here by JavaScript -->
+            </div>
+
+            <!-- Properties Grid -->
+            <div id="propertiesGrid" class="properties-grid">
+                <!-- Property cards will be inserted here by JavaScript -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button id="loadMoreBtn" class="load-more-btn" style="display: none;">
+                    Load More Properties
+                </button>
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <p>No properties found for this suburb.</p>
+                <p class="empty-state-hint">Try searching for a different suburb or check back later.</p>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section class="info-section">
+            <div class="info-card">
+                <h3>About Opportunity Score</h3>
+                <p>
+                    The <strong>Opportunity Score</strong> provides a comprehensive property investment rating using multiple factors:
+                </p>
+                <div class="formula-sections">
+                    <div class="formula-section">
+                        <h4>Suburb Factors (40%)</h4>
+                        <ul>
+                            <li>Suburb Quality Score (20%)</li>
+                            <li>Population Growth (10%)</li>
+                            <li>Walkability (10%)</li>
+                        </ul>
+                    </div>
+                    <div class="formula-section">
+                        <h4>Value Factors (35%)</h4>
+                        <ul>
+                            <li>Price per Bedroom (15%)</li>
+                            <li>Price vs Suburb Median (10%)</li>
+                            <li>Price per m² (10%)</li>
+                        </ul>
+                    </div>
+                    <div class="formula-section">
+                        <h4>Feature Factors (25%)</h4>
+                        <ul>
+                            <li>Property Type (8%)</li>
+                            <li>Parking (5%)</li>
+                            <li>Renovation Status (4%)</li>
+                            <li>Proximity to Amenities (5%)</li>
+                            <li>Market Velocity (3%)</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="info-note">
+                    Each property receives a unique score based on its specific characteristics, allowing you to compare opportunities within the same suburb.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>Powered by Microburbs API | Technical Challenge - Task 3</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
