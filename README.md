@@ -2,6 +2,17 @@
 
 A modern web application that integrates with the Microburbs API to help users discover property investment opportunities through data-driven insights. Built for the Microburbs Technical Challenge - Task 3.
 
+[![GitHub](https://img.shields.io/badge/github-LukeAndWinters%2Fmicroburbs--property--dashboard-blue)](https://github.com/LukeAndWinters/microburbs-property-dashboard)
+[![Python](https://img.shields.io/badge/python-3.11-blue)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/flask-3.0-green)](https://flask.palletsprojects.com/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+## 🌐 Live Demo
+
+**GitHub Repository:** https://github.com/LukeAndWinters/microburbs-property-dashboard
+
+**Deploy Your Own:** See [DEPLOYMENT.md](DEPLOYMENT.md) for instructions
+
 ## 📋 Overview
 
 This dashboard allows users to search for properties by suburb and calculates an **Opportunity Score** based on suburb quality metrics and population growth data. The application provides a clean, intuitive interface that transforms complex property data into actionable insights.
